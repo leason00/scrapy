@@ -71,7 +71,6 @@ class UserAgentMiddleware(object):
     """ 换User-Agent """
 
     def process_request(self, request, spider):
-        print 'agent'
         agent = random.choice(agents)
         request.headers["User-Agent"] = agent
 
@@ -90,4 +89,3 @@ class CookiesMiddleware(object):
         #     bs += chr(random.randint(97, 122))
         # _cookie = json.dumps(self.cookie) % bs
         request.cookies = self.cookie
-        print 'CookiesMiddleware'
